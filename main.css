@@ -1,0 +1,227 @@
+:root {
+  --light-grey: #CFCFCF;
+  --mid-grey: #BCBDC1;
+  --dark-grey: #373737;
+  --darker-grey: #201D1E;
+  --light-gold: #DB945A;
+  --dark-gold: #D18F48;
+  --blue: #49ABD8;
+}
+
+body {
+  overflow: hidden;
+  background-color: #151410;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.obi-wan-kintainer {
+  margin: 20px;
+}
+
+.obi-wan {
+  max-width: 150px;
+}
+
+.obi-wan:hover {
+  animation: shake 300ms infinite ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+.lightsaber--container * {
+  position: relative;
+  margin: 0 auto;
+}
+
+.lightsaber--container {
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 60px);
+  width: 120px;
+  transition: all 1000ms;
+  transform-origin: bottom;
+  will-change: transform;
+}
+
+.lightsaber--container.ignited {
+  bottom: 50%;
+  left: 50px;
+  transform: rotateZ(90deg) scale(0.6);
+}
+
+.lightsaber--blade {
+  width: 90%;
+  height: 90vw;
+  border-radius: 100px 100px 0 0;
+  background: linear-gradient(to right, rgba(73,171,216,1) 0%, rgba(73,171,216,0.3) 50%, rgba(73,171,216,1) 100%), no-repeat, #FFF;
+  box-shadow: 0 0 200px var(--blue);
+  transition: transform 1000ms 1000ms;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.lightsaber--container.ignited .lightsaber--blade {
+  transform: scaleY(1);
+}
+
+.lightsaber--container__smaller {
+  width: 70%;
+}
+
+.lightsaber--tip-1 {
+  height: 5px;
+  background-color: var(--light-grey);
+}
+
+.lightsaber--tip-2 {
+  width: 85%;
+  height: 10px;
+  background-color: var(--mid-grey);
+}
+
+.lightsaber--tip-3 {
+  height: 50px;
+  background-color: var(--light-grey);
+}
+
+.lightsaber--gold-1 {
+  width: 40%;
+  height: 25px;
+  background-color: var(--dark-gold);
+}
+
+.lightsaber--gold-2 {
+  height: 5px;
+  background-color: var(--light-gold);
+}
+
+.lightsaber--gold-3 {
+  width: 85%;
+  height: 25px;
+  background-color: var(--light-gold);
+}
+
+.lightsaber--gold-4 {
+  width: 60%;
+  height: 15px;
+  background-color: var(--light-gold);
+}
+
+.lightsaber--dark-1 {
+  height: 8px;
+  background-color: var(--darker-grey);
+}
+
+.lightsaber--dark-2 {
+  width: 60%;
+  height: 8px;
+  background-color: var(--dark-grey);
+}
+
+.lightsaber--large-grey {
+  height: 140px;
+  background-color: var(--light-grey);
+}
+
+.lightsaber--large-grey::after {
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  width: 20px;
+  height: 120px;
+  background-color: var(--mid-grey);
+  content: '';
+}
+
+.lightsaber--dark-hilt {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  max-width: 90%;
+}
+
+.lightsaber--dark-hilt::before {
+  position: absolute;
+  top: 0%;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  background-color: var(--dark-grey);
+  content: '';
+}
+
+.lightsaber--hilt-stripe {
+  width: 13px;
+  height: 80px;
+  background-color: var(--darker-grey);
+}
+
+.lightsaber--hilt-stripe:first-of-type,
+.lightsaber--hilt-stripe:nth-child(6) {
+  width: 6px;
+}
+
+.lightsaber--hilt-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #111;
+  transform: translate(-50%, -50%);
+}
+
+.lightsaber--hilt-button-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--light-grey);
+}
+
+.lightsaber--bottom-1 {
+  width: 70%;
+  height: 10px;
+  background-color: var(--mid-grey);
+}
+
+.lightsaber--bottom-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  max-width: 94%;
+}
+
+.lightsaber--bottom-stripe {
+  width: 16px;
+  height: 50px;
+  background-color: var(--mid-grey);
+}
+
+.lightsaber--bottom-stripe:nth-child(3) {
+  opacity: 0;
+}
+
+.lightsaber--bottom-container::before {
+  position: absolute;
+  top: 0%;
+  left: 10%;
+  width: 80%;
+  height: 100%;
+  background-color: var(--light-grey);
+  content: '';
+}
